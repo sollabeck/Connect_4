@@ -54,7 +54,8 @@ var move = function(player, column) {
 var parseData = function(player,column,row){  //
 
   $("tbody tr").children("td:nth-child(" + (column+1) + ")").eq(row).find("circle").attr("fill", player.color);
-  diagonal_check(player,column,row);
+  win_checker();
+  // diagonal_check(player,column,row);
 };
 
 
@@ -63,11 +64,11 @@ var parseData = function(player,column,row){  //
 
 var horizontal_checker = function() {
     for (var i=0; i<7; i++ ) {
-        if (board[i].toString().includes('r,r,r,r') === true) {
+        if (board[i].toString().includes('red,red,red,red') === true) {
             // console.log("row " + i);
             console.log("Red Wins!");
         }
-        else if (board[i].toString().includes('b,b,b,b') === true) {
+        else if (board[i].toString().includes('black,black,black,black') === true) {
             console.log("Black Wins!");
         }
     }
@@ -76,12 +77,12 @@ var horizontal_checker = function() {
 var vertical_checker = function() {
   transposed = board.transpose();
   for (var i=0; i<7; i++ ) {
-    if (transposed[i].toString().includes('r,r,r,r') === true) {
+    if (transposed[i].toString().includes('red,red,red,red') === true) {
         // console.log("row " + i);
-        console.log("Red Wins!");
+        alert("Red Wins!");
     }
-    else if (transposed[i].toString().includes('b,b,b,b') === true) {
-        console.log("Black Wins!");
+    else if (transposed[i].toString().includes('black,black,black,black') === true) {
+        alert("Black Wins!");
     }
   }
 };
@@ -93,43 +94,46 @@ var vertical_checker = function() {
 var win_checker = function() {
   vertical_checker();
   horizontal_checker();
-//   diagonal_checker();
+  diagonal_checker();
 };
 
-
-// var lr_diagonal_check = function(player,column,row){
-//   if(row > 3 || column > 3){return;}
-//   var current_cell = board[row][column];
-//   var counter = 0;
-//   for(var i = 1; i<5; i++){
-//     if(counter==3){return player.color+" wins!"};
-//     if(board[row+i][column+i]==player.color){
-//       counter++
-//     }
-//   }
-// };
-
-// var rl_diagonal_check = function
+var diagonal_checker = function(){
+  lr_diagonal_check();
+  rl_diagonal_check();
+}
 
 
 
+var lr_diagonal_check = function(){
+  var counter = 0
+  for(var i = 0;i<4;i++){ //row 0
+    for(var j = 0; j<4;j++){ //column 0
+      for(var k=1; k<4;k++){
+        current_cell = board[i][j]
+        if(counter==3 && current_cell != 'e'){alert(current_cell + " wins!"); return;};
+        if (board[i+k][j+k] == current_cell){
+           counter++
+        }
+      }
+    }
+  }
+}
 
 
-// var lr_diagonal_check = function(player,column,row){
-//   var counter = 0
-//   for(var i = 0;i<4;i++){ //row 0
-//     for(var j = 0; j<4;j++){ //column 0
-//       for(var k=1; k<5;k++){
-//         current_cell = board[i][j]
-//         if(counter==3){return current_cell + "wins!"};
-//         (board[i+k]&&board[j+k] ?)if (board[i+k][j+k] == current_cell){
-//            counter++
-//             debugger
-//         }
-//       }
-//     }
-//   }
-// }
+var rl_diagonal_check = function(){
+  for(var i=0;i<4;i++){ //row 1
+    for(var j = 3; j<7;j++){ //column 6
+      var counter = 0
+      for(var k=1; k<4;k++){
+        current_cell = board[i][j]
+        if ((board[i+k][j-k] == current_cell)){
+           counter++
+            if(counter==3 && current_cell != 'e'){alert(current_cell + " wins!"); return;};
+        }
+      }
+    }
+  }
+}
 
 
 
