@@ -7,8 +7,8 @@ form{
   border-radius: 10px;
   display:inline-block;
   position:relative;
-  margin-left: 40%;
-  margin-top: 20%;
+  margin-left: 43%;
+  margin-top: 8%;
   padding: 20px;
   background: rgba(255,255,255,0.28);
 background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.28) 0%, rgba(246,246,246,0.66) 53%, rgba(255,255,255,0.59) 100%);
@@ -43,4 +43,29 @@ form input{
 }
 .player2{
   margin-top: 10%;
+}
+
+
+.title{
+  text-align: center;
+  font-family: Lobster;
+  font-size: 4em;
+  color: #FAFAFA;
+  text-shadow:2px 2px black;
+}
+
+
+.glowing-border {
+    border: 2px solid #dadada;
+    border-radius: 7px;
+}
+
+.glowing-border:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.email{
+  margin-top: 3px;
 }

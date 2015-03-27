@@ -17,6 +17,9 @@ td {
 }
 
 h1{
+  font-family: Lobster;
+  color:#FAFAFA;
+  text-shadow:1px 1px black;
   text-align: center;
 }
 
@@ -40,6 +43,4 @@ img{
   margin-left:7px;
 }
 
-.login{
-  background-color: white;
-}
+
