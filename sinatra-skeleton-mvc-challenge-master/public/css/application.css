@@ -1,0 +1,45 @@
+html{
+background: -webkit-linear-gradient(-45deg, rgba(82,77,128,1) 0%, rgba(145,191,222,1) 100%);
+height:100%;
+}
+
+
+*{
+  font-family: sans-serif;
+  color:white;
+}
+td {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  background: yellow;
+}
+
+h1{
+  text-align: center;
+}
+
+
+p{
+  text-align: center;
+}
+.board{
+  margin:auto;
+}
+
+form {
+  color: black;
+}
+
+img{
+  position:relative;
+  border-radius: 50%;
+  border:3px solid black;
+  margin-top:7px;
+  margin-left:7px;
+}
+
+.login{
+  background-color: white;
+}
