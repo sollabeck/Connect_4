@@ -38,9 +38,14 @@ form {
 img{
   position:relative;
   border-radius: 50%;
-  border:3px solid black;
   margin-top:7px;
   margin-left:7px;
 }
 
+.red{
+  border:3px solid red;
+}
+.black{
+  border:3px solid black;
+}
 

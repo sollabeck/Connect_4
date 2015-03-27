@@ -109,7 +109,7 @@ var parseData = function(player,column,row){  //
   // $("tbody tr").children("td:nth-child(" + (column+1) + ")").eq(row).find("circle").attr("fill", player.color);
 
    $("tbody tr").children("td:nth-child(" + (column+1) + ")").eq(row).find("svg").remove();
-   $("tbody tr").children("td:nth-child(" + (column+1) + ")").eq(row).append("<img src="+player.email+"/>");
+   $("tbody tr").children("td:nth-child(" + (column+1) + ")").eq(row).append("<img class='"+player.color+"' src="+player.email+"/>");
     win_checker();
 };
 
