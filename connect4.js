@@ -60,6 +60,43 @@ var parseData = function(player,column,row){  //
 
 
 
+
+var horizontal_checker = function() {
+    for (var i=0; i<7; i++ ) {
+        if (board[i].toString().includes('r,r,r,r') === true) {
+            // console.log("row " + i);
+            console.log("Red Wins!");
+        }
+        else if (board[i].toString().includes('b,b,b,b') === true) {
+            console.log("Black Wins!");
+        }
+    }
+};
+
+var vertical_checker = function() {
+  transposed = board.transpose();
+  for (var i=0; i<7; i++ ) {
+    if (transposed[i].toString().includes('r,r,r,r') === true) {
+        // console.log("row " + i);
+        console.log("Red Wins!");
+    }
+    else if (transposed[i].toString().includes('b,b,b,b') === true) {
+        console.log("Black Wins!");
+    }
+  }
+};
+
+// var diagonal_checker = function() {
+//   //
+// };
+
+var win_checker = function() {
+  vertical_checker();
+  horizontal_checker();
+//   diagonal_checker();
+};
+
+
 // var lr_diagonal_check = function(player,column,row){
 //   if(row > 3 || column > 3){return;}
 //   var current_cell = board[row][column];
