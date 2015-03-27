@@ -25,6 +25,19 @@ var player2 = {
 var current_player = player2;
 
 
+var resetBoard = function(){
+  board = [ ['e','e','e','e','e','e','e'],
+              ['e','e','e','e','e','e','e'],
+              ['e','e','e','e','e','e','e'],
+              ['e','e','e','e','e','e','e'],
+              ['e','e','e','e','e','e','e'],
+              ['e','e','e','e','e','e','e'],
+              ['e','e','e','e','e','e','e']];
+
+  $("circle").attr("fill", "white");
+}
+
+
 
 var getColumn = $("tbody tr:nth-child(1)").children().click(function(event){
   (current_player === player1) ? current_player = player2 : current_player = player1;
@@ -66,10 +79,13 @@ var horizontal_checker = function() {
     for (var i=0; i<7; i++ ) {
         if (board[i].toString().includes('red,red,red,red') === true) {
             // console.log("row " + i);
-            console.log("Red Wins!");
+            alert("Red Wins!");
+            resetBoard();
+
         }
         else if (board[i].toString().includes('black,black,black,black') === true) {
-            console.log("Black Wins!");
+            alert("Black Wins!");
+            resetBoard();
         }
     }
 };
@@ -80,9 +96,13 @@ var vertical_checker = function() {
     if (transposed[i].toString().includes('red,red,red,red') === true) {
         // console.log("row " + i);
         alert("Red Wins!");
+        resetBoard();
+
     }
     else if (transposed[i].toString().includes('black,black,black,black') === true) {
         alert("Black Wins!");
+        resetBoard();
+
     }
   }
 };
@@ -110,7 +130,7 @@ var lr_diagonal_check = function(){
     for(var j = 0; j<4;j++){ //column 0
       for(var k=1; k<4;k++){
         current_cell = board[i][j]
-        if(counter==3 && current_cell != 'e'){alert(current_cell + " wins!"); return;};
+        if(counter==3 && current_cell != 'e'){alert(current_cell + " wins!"); resetBoard();};
         if (board[i+k][j+k] == current_cell){
            counter++
         }
@@ -128,7 +148,7 @@ var rl_diagonal_check = function(){
         current_cell = board[i][j]
         if ((board[i+k][j-k] == current_cell)){
            counter++
-            if(counter==3 && current_cell != 'e'){alert(current_cell + " wins!"); return;};
+            if(counter==3 && current_cell != 'e'){alert(current_cell + " wins!"); resetBoard();};
         }
       }
     }
