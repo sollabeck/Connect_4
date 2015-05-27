@@ -3,4 +3,4 @@
 Group project Connect 4.
 I worked on the styling, Gravatar integration, and win condition logic for diagonals.
 
-https://connect-4-dbc.herokuapp.com/
+https://connect-4-kbdg.herokuapp.com/
