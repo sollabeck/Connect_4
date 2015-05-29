@@ -1,6 +1,6 @@
 # Connect 4
 
-Group project Connect 4.
-I worked on the styling, Gravatar integration, and win condition logic for diagonals.
 
-https://connect-4-kbdg.herokuapp.com/
+A simple Connect 4 game (Note: This is a 7x7 board). I worked on the styling and the logic for diagonal win conditions.
+
+[Demo](http://connect-4-kbdg.herokuapp.com/)
